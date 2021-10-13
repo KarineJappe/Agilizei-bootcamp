@@ -1,0 +1,8 @@
+node_modules
+
+cypress/videos
+
+mochawesomme-report
+index.json
+
+package-lock.json
