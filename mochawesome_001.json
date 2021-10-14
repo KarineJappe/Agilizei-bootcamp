@@ -1,0 +1,126 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-10-14T01:45:00.620Z",
+    "end": "2021-10-14T01:45:03.729Z",
+    "duration": 3109,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9e502665-48dc-43fb-a26f-49a1f2023261",
+      "title": "",
+      "fullFile": "cypress/integration/listagem.spec.js",
+      "file": "cypress/integration/listagem.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0fc0d692-4610-4003-95b4-1181c570b3f7",
+          "title": "Listagem",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Quando não houver cadastros, então a lisgaem deve estar vazia",
+              "fullTitle": "Listagem Quando não houver cadastros, então a lisgaem deve estar vazia",
+              "timedOut": null,
+              "duration": 869,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('listagem-vazia').then(data => {\n  window.localStorage.setItem('data', JSON.stringify(data));\n});\ncy.visit('https://form-agilizei.netlify.app/listagem.html'); // Deve conter o tamanho\ncy.get('table tbody tr').should('have.length', 0);",
+              "err": {},
+              "uuid": "8d03c46e-1f4d-4acc-876c-43cae85576d7",
+              "parentUUID": "0fc0d692-4610-4003-95b4-1181c570b3f7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Quando houver um ou mais cadastro, então a listagem deve esxibir cada registro",
+              "fullTitle": "Listagem Quando houver um ou mais cadastro, então a listagem deve esxibir cada registro",
+              "timedOut": null,
+              "duration": 483,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('listagem-com-itens').then(data => {\n  window.localStorage.setItem('data', JSON.stringify(data));\n});\ncy.visit('https://form-agilizei.netlify.app/listagem.html');\ncy.get('table tbody tr').should('have.length', 2);",
+              "err": {},
+              "uuid": "03a628bf-f559-4121-96ac-5b4a9d698f12",
+              "parentUUID": "0fc0d692-4610-4003-95b4-1181c570b3f7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8d03c46e-1f4d-4acc-876c-43cae85576d7",
+            "03a628bf-f559-4121-96ac-5b4a9d698f12"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1352,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "mochawesome-report",
+        "quiet": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}
